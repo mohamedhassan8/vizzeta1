@@ -1,0 +1,63 @@
+
+{% extends 'pass.html' %}
+{% load static %}
+
+  {% block body%}
+{% include 'serch.html'%}
+
+
+
+<div dir="rtl">
+<div class="container">
+    <div class="signup">
+
+
+
+        <form method="POST" enctype="multipart/form-data" action="{% url 'backcreate'%}">
+            {% csrf_token %}
+            <h4 class="auth-header">أنشاء حساب جديد</h4>
+                <div class="col-sm-6">
+                    <h4 class="auth-header">الاسم</h4>
+                    <div class="form-group">
+                       <input type="text" name="username">
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <h4 class="auth-header">الايميل</h4>
+                    <div class="form-group">
+                        <input type="email" name="emil">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <h4 class="auth-header">الاسم الاول</h4>
+                    <div class="form-group">
+                        <input type="text" name="first_name">
+                    </div>
+                </div>
+
+                <div class="col-sm-6">
+                    <h4 class="auth-header">الاسم الثاني</h4>
+                    <div class="form-group">
+                       <input type="text" name="lastname">
+                </div>
+            </div>
+
+                <div class="col-sm-6">
+                    <h4 class="auth-header">كلمة السر</h4>
+                    <div class="form-group">
+                       <input type="password" name="password">
+                </div>
+            </div>
+
+            <div class="buttons-w"><button type="submit" class="btn btn-success">التسجيل</button></div>
+
+        </form>
+    </div>
+    </div>
+</div>
+</div>
+
+
+
+{% endblock body%}

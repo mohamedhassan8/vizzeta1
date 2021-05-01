@@ -1,0 +1,63 @@
+
+
+{% extends 'pass.html' %}
+{% load static %}
+
+  {% block body%}
+{% include 'serch.html'%}
+
+
+
+<div dir="rtl">
+<div class="container">
+    <div class="signup">
+
+    <div class="col-md-9" >
+
+        <form method="POST" enctype="multipart/form-data" >
+             {% csrf_token %}
+
+                <div class="form-group">
+                   <h4 class="auth-header">انشاء مقال</h4>
+
+
+                <div class="col-sm-6">
+                    <h4 class="auth-header">عنوان المقال</h4>
+                    <div class="form-group">
+                        {{username.title}}
+                    </div>
+                </div>
+
+                <div class="col-sm-6">
+                    <h4 class="auth-header">تفاصيل المقال </h4>
+                    <div class="form-group">
+                         {{username.detiles}}
+                    </div>
+                </div>
+
+                <div class="col-sm-6">
+                    <h4 class="auth-header">اضافة صوره </h4>
+                    <div class="form-group">
+                         {{username.img}}
+                    </div>
+                </div>
+
+
+
+
+            <div class="buttons-w"><button type="submit" class="btn btn-success">نشر </button></div>
+
+         </form>
+    </div>
+    </div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+{% endblock body%}

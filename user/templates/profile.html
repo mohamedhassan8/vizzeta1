@@ -1,0 +1,180 @@
+
+
+
+
+
+
+
+
+
+
+
+{% extends 'pass.html' %}
+{% load static %}
+
+  {% block body%}
+{% include 'serch.html'%}
+
+
+
+
+<div dir="rtl">
+<div class="container">
+    <div class="signup">
+
+    <div class="col-md-9" >
+        <form method="POST" enctype="multipart/form-data">
+             {% csrf_token %}
+            <h4 class="auth-header">تحديث معلوماتك الشخصية</h4>
+                <div class="form-group">
+                    <p>الاسم</p>
+                    {{p_form.who_i}}
+
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <p>معلومات عن الدكتور</p>
+                    {{p_form.subtitle}}
+                    </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <p>عمرك</p>
+                    {{p_form.age}}
+                    </div>
+                </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <p>خدمات الدكتور</p>
+                            {{p_form.Specialist_doctor}}
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <p>العنوان</p>
+                            {{p_form.address}}
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <p>العنوان بالتفصيل</p>
+                    {{p_form.address_detail}}
+                </div>
+                <div class="form-group">
+                    <p>السعر</p>
+                    {{p_form.price}}
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <p>مدة الانتظار</p>
+                            {{p_form.Waiting_time}}
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <p>مدة العمل</p>
+                            {{p_form.working_hours}}
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <p>رقم التلفون</p>
+                            {{p_form.numper}}
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <p>الصوره الشخصيه</p>
+                            {{p_form.img}}
+                    </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <p>الصوره العياده</p>
+                            {{p_form.img1}}
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <p>الصوره العياده</p>
+                            {{p_form.img2}}
+                    </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <p>الصوره العياده</p>
+                            {{p_form.img3}}
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <p>الصوره العياده</p>
+                            {{p_form.img4}}
+                    </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <p>بلد العيادة</p>
+                            {{p_form.nationl}}
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <p>facebook</p>
+                            {{p_form.facebook}}
+                    </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <p>Gmail</p>
+                           {{p_form.google}}
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <p>twitter</p>
+                            {{p_form.twitter}}
+                    </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <p>نوع الدكتور</p>
+                            {{p_form.doctor_type}}
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <p>التخصص</p>
+                            {{p_form.doctor_jop}}
+                    </div>
+                    </div>
+                </div>
+
+            <div class="buttons-w"><button type="submit" class="btn btn-success">تعديل</button></div>
+
+        </form>
+    </div>
+    </div>
+</div>
+</div>
+ {% endblock body%}

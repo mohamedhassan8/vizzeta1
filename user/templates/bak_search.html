@@ -1,0 +1,77 @@
+{% extends 'pass.html' %}
+{% load static %}
+
+  {% block body%}
+{% include 'serch.html'%}
+{% for v in data%}
+    <!-- job_listing_area_start  -->
+    <div class="job_listing_area">
+        <div class="container">
+
+            <div class="job_lists">
+                <div class="row">
+                    <div class="col-lg-10 col-md-10" style="height: 16rem;" >
+                        <div class="single_jobs white-bg d-flex justify-content-between">
+                            <div class="jobs_left d-flex align-items-center">
+
+                                <div >
+                                         {% if v.img%}
+                                        <img  src="{{ v.img.url }}" alt="" width="100" height="100">
+                                        {% else%}
+                                    <img class="img-circle " src="{% static 'img/candiateds/2.png'%}" alt="" >
+                                    {% endif %}
+                                </div>
+                                <div class="jobs_conetent">
+                                    <a href="{% url 'profel' v.slug%}"><h5>دكتور </h5></a>
+                                    <h6>{{ v.subtitle}}</h6>
+
+                                    <div class="links_locat">
+                                        <div class="location">
+                                            <p> <i class="fas fa-briefcase-medical"></i> دكتور <span style="color: blue;">{{ v.who_i}}</span> متخصص في <span style="color: blue;">{{ v.doctor_jop}}</span></p>
+                                            <p> <i class="fa fa-map-marker"></i>{{ v.address}} : {{ v.address_detail}}</p>
+                                            <p> <i class="fa fa-map-marker"></i> الكشف : <span style="color: blue;">{{ v.price}}</span> جنية</p>
+                                            <p> <i class="fa fa-clock-o"></i> مدة الانتظار : <span style="color: blue;">{{ v.Waiting_time}}</span> ساعه</p>
+                                            <p> <i class="fa fa-clock-o"></i> عدد ساعات العمل : <span style="color: blue;">{{ v.working_hours}}</span> ساعه</p>
+                                            <p> <i class="fa fa-clock-o"></i>سعر المكالمه العادية  :<span style="color: blue;"> {{ v.numper}} </span>  </p>
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="jobs_right">
+                                <div class="apply_now">
+                                    <a class="boxed-btn3" href="">حجز كشف</a>
+                                </div>
+
+                                <div class="rating">
+                                    <div class="text-warning">
+
+                                        <!-- to make image category for clinic image -->
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        </div>
+                                    <div class="rating" >
+                                        <h5>تقييم الدكتور</h5>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- job_listing_area_end  -->{% endfor %}
+</div>
+
+
+
+
+ {% endblock body%}

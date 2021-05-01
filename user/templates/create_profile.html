@@ -1,0 +1,109 @@
+
+{% extends 'pass.html' %}
+{% load static %}
+
+  {% block body%}
+{% include 'serch.html'%}
+
+
+<div dir="rtl">
+<div class="container">
+    <div class="signup">
+
+    <div class="col-md-9" >
+        <form method="POST" enctype="multipart/form-data" action="{% url 'create_profile'%}">
+            {% csrf_token %}
+            <h4 class="auth-header">تحديث معلوماتك الشخصية</h4>
+
+
+                <div class="form-group">
+                    <input type="text" name="twitter" placeholder="twitter">
+                </div>
+                <div class="form-group">
+                    <input type="text" name="google"placeholder="google">
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <input type="text" name="facebook"placeholder="facebook">
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <input type="text" name="nationl"placeholder="nationl">
+                        </div>
+                    </div>
+                </div>
+
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <input type="number" name="numper"placeholder="numper">
+                    </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <input type="number" name="working_hours"placeholder="working_hours">
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <input type="number" name="Waiting_time"placeholder="Waiting_time">
+                    </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <input type="number" name="price"placeholder="price">
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <input type="text" name="address_detail"placeholder="address_detail">
+                    </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <input type="text" name="address"placeholder="address">
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <input type="text" name="Specialist_doctor"placeholder="Specialist_doctor">
+                    </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <input type="text" name="who_i"placeholder="who_i">
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <input type="number" name="age"placeholder="age">
+                        </div>
+                    </div>
+                </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                            <input type="text" name="subtitle"placeholder="subtitle">
+                    </div>
+                </div>
+            </div>
+            <div class="buttons-w"><button type="submit" class="btn btn-success">تعديل</button></div>
+
+        </form>
+    </div>
+    </div>
+</div>
+</div>
+
+
+
+{% endblock body%}

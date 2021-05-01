@@ -1,0 +1,74 @@
+
+{% extends 'pass.html' %}
+{% load static %}
+
+  {% block body%}
+{% include 'serch.html'%}
+
+</div>
+<!-- bradcam_area  -->
+
+
+<div class="bradcam_text " >
+    <h3 >مقالات طبيه</h3>
+</div>
+<div dir="rtl">
+
+<!--/ bradcam_area  -->
+<!--================Blog Area =================-->
+<section class="blog_area section-padding">
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 mb-5 mb-lg-0">
+            <div class="blog_left_sidebar">
+                <article class="blog_item">
+                    <div class="blog_item_img">
+                        {% if d.img%}
+
+                        <img class="card-img rounded-0" src="{{ d.img.url}}" alt="">
+                        {% endif %}
+
+                    </div>
+
+                    <div class="blog_details">
+                        <a class="d-inline-block" href="">
+                            <h2>{{d.title}}</h2>
+                        </a>
+                        <p>{{d.detiles}}</p>
+                        <ul class="blog-info-link">
+                          <p>{{d.timecreate}}</p>
+
+
+                        </ul>
+                    </div>
+
+                </article>
+
+
+
+                <nav class="blog-pagination justify-content-center d-flex">
+                    {% for n in t%}
+                    <ul class="pagination">
+
+
+
+
+                            <li class="page-item">
+                                <a href="{% url 'pass' n.id %}" class="page-link">{{n.id}}</a>
+                            </li>
+
+
+
+                    </ul>
+                    {% endfor %}
+                </nav>
+            </div>
+        </div>
+       
+    </div>
+</div>
+</section>
+<!--================Blog Area =================-->
+</div>
+
+{% endblock body%}
